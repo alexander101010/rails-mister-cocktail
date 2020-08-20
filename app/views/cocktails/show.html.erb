@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Cocktails#show</h1>
+  <p>Find me in app/views/cocktails/show.html.erb</p>
+
+  <h2><%= @cocktail.name %></h2>
+
+
+  <!-- display doses of @cocktail -->
+  <%  @cocktail.doses.each do |dose|%>
+    <span>
+      <p><%= Ingredient.find(dose.ingredient_id).name %> <%= dose.description %></p>
+      <%= link_to "🗑", dose_path(dose.id), method: :delete %>
+    </span>
+  <% end %>
+
+<h4>Add more Doses:</h4>
+  <div class="new-simple-form">
+  <%= simple_form_for [ @cocktail, @dose] do |f| %>
+    <%= f.association :ingredient %>
+    <%= f.input :description %>
+    <%= f.submit "Add dose", class: "btn btn-success" %>
+  <% end %>
+</div>
+
+  <%= link_to 'Back to Cocktails', cocktails_path %>
+</div>
+🗑
