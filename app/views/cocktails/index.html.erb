@@ -1,15 +1,23 @@
 <div class="container">
+<div class="title">
+  <h1>Drink Therapy</h1>
+</div>
 
-  <h1>Cocktails#index</h1>
-  <p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="card-container">
 
-  <ul>
   <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to cocktail.name, cocktail_path(cocktail) %>
+    </div>
   <% end %>
-  </ul>
+</div>
 
-  <%= link_to 'Create a Cocktail', new_cocktail_path %>
+  <div class="new-simple-form">
+    <%= simple_form_for [ @cocktail ] do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Create Cocktail", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 
 </div>

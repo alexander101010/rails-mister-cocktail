@@ -1,0 +1,59 @@
+.card-product {
+  overflow: hidden;
+  height: 400px;
+  width: 400px;
+  padding: 25px;
+  // background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: grid;
+  align-items: center;
+  margin: 60px;
+}
+
+.card-banner {
+  background-image: url("https://unsplash.com/photos/c9N-57Is7LA");
+  text-align: center;
+}
+
+// .card-product img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.add-doses {
+  width: 400px;
+  height: 350px;
+  background-color: rgb(200,200,200);
+  color: black;
+  padding: 20px;
+  margin: 20px;
+}
+
+.doses-container {
+  display: flex;
+  justify-content: center;
+}
+
+.doses-info{
+  display: grid;
+  text-align: center;
+}

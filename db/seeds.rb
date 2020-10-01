@@ -7,13 +7,17 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
-
+puts '-----Adding ingredients from JSON------'
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 
 ingredients_serialized = open(url).read
 ingredients = JSON.parse(ingredients_serialized)
 
-ingredients["drinks"].each do |drink|
-  Ingredient.create(name: drink["strIngredient1"])
-  puts "#{drink["strIngredient1"]} was added!"
+ingredients['drinks'].each do |drink|
+  Ingredient.create(name: drink['strIngredient1'])
+  puts "#{drink['strIngredient1']} was added!"
 end
+puts '-----Adding some custom ingredients-----'
+Ingredient.create(name: 'Soda water')
+Ingredient.create(name: 'Campari')
+Ingredient.create(name: 'Lemon')
